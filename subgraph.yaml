@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -13,38 +13,11 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - AddWhitelistTokens
         - DepositBribe
-        - GrantTeamRole
-        - RemoveWhitelistTokens
-        - RevokeTeamRole
-        - RoleAdminChanged
-        - RoleGranted
-        - RoleRevoked
-        - SetProposal
-        - SetRewardForwarding
       abis:
         - name: BalancerBribe
           file: ./abis/BalancerBribe.json
       eventHandlers:
-        - event: AddWhitelistTokens(address[])
-          handler: handleAddWhitelistTokens
         - event: DepositBribe(indexed bytes32,indexed address,uint256,bytes32,bytes32,indexed address)
           handler: handleDepositBribe
-        - event: GrantTeamRole(address)
-          handler: handleGrantTeamRole
-        - event: RemoveWhitelistTokens(address[])
-          handler: handleRemoveWhitelistTokens
-        - event: RevokeTeamRole(address)
-          handler: handleRevokeTeamRole
-        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
-          handler: handleRoleAdminChanged
-        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleGranted
-        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleRevoked
-        - event: SetProposal(indexed bytes32,uint256)
-          handler: handleSetProposal
-        - event: SetRewardForwarding(address,address)
-          handler: handleSetRewardForwarding
       file: ./src/balancer-bribe.ts
