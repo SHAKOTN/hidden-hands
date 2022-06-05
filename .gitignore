@@ -10,7 +10,7 @@ build
 .env
 .vscode/
 secrets/*.yml
-
+generated
 yarn-error.log
 
 *.swp

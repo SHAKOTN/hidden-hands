@@ -13,7 +13,7 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - DepositBribe
+        - Bribe
       abis:
         - name: BalancerBribe
           file: ./abis/BalancerBribe.json

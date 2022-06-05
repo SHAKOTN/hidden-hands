@@ -1,5 +1,9 @@
-type ExampleEntity @entity {
-  id: ID!
-  count: BigInt!
-  tokens: [Bytes]! # address[]
+type Bribe @entity(immutable: true) {
+  id: Bytes!
+  proposal: Bytes!
+  token: Bytes!
+  amount: BigInt!
+  bribeIdentifier: Bytes!
+  rewardIdentifier: Bytes!
+  briber: Bytes!
 }
