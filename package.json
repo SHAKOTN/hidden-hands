@@ -1,0 +1,16 @@
+{
+  "name": "hidden-hands",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ hidden-hands",
+    "create-local": "graph create --node http://localhost:8020/ hidden-hands",
+    "remove-local": "graph remove --node http://localhost:8020/ hidden-hands",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 hidden-hands"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.30.4",
+    "@graphprotocol/graph-ts": "0.27.0"
+  }
+}
