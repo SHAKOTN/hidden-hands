@@ -1,18 +1,10 @@
-import {
-  DepositBribe,
-} from "../generated/BalancerBribe/BalancerBribe"
+import { DepositBribe, } from "../generated/BalancerBribe/BalancerBribe"
 import { Bribe } from "../generated/schema"
 
-
 export function handleDepositBribe(event: DepositBribe): void {
-  const id = event.params.bribeIdentifier;
-  let bribe = Bribe.load(id);
-  if (bribe !== null) {
-    return;
-  } else {
-    bribe = new Bribe(id);
-  }
-  bribe.bribeIdentifier = id;
+  const bribe = new Bribe(event.transaction.hash);
+
+  bribe.bribeIdentifier = event.params.bribeIdentifier;
   bribe.proposal = event.params.proposal;
   bribe.token = event.params.token;
   bribe.amount = event.params.amount;
